@@ -268,6 +268,39 @@
             text-decoration: underline;
         }
 
+        /* Style pour les commentaires visibles */
+        .comment {
+            background-color: #fff5f5;
+            border: 2px solid #ffcccc;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: normal;
+            position: relative;
+        }
+
+        .comment::before {
+            content: "💡 COMMENTAIRE";
+            display: block;
+            font-weight: bold;
+            color: #cc0000;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #ffcccc;
+            padding-bottom: 0.5rem;
+        }
+
+        .comment.to-fix {
+            background-color: #fff8e6;
+            border: 2px solid #ffcc00;
+        }
+
+        .comment.to-fix::before {
+            content: "⚠️ À MODIFIER";
+            color: #cc6600;
+            border-bottom: 1px solid #ffcc00;
+        }
+
         @media (max-width: 768px) {
             body {
                 padding: 1.5rem 1rem;
@@ -284,17 +317,25 @@
             .nav-links {
                 gap: 1rem;
             }
+            
+            .comment {
+                padding: 1rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
+            <!-- COMMENTAIRE: Vous pouvez changer le nom du site ici -->
             <h1 class="site-title">Dashlem</h1>
+            
+            <!-- COMMENTAIRE: Vous pouvez modifier le sous-titre/slogan ici -->
             <p class="site-subtitle">My thoughts : to let something on this earth.</p>
             
             <nav>
                 <ul class="nav-links">
+                    <!-- COMMENTAIRE: Vous pouvez modifier les titres des pages de navigation ici -->
                     <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
                     <li><a href="#" class="nav-link" data-page="essays">Essays</a></li>
                     <li><a href="#" class="nav-link" data-page="books">Books</a></li>
@@ -308,44 +349,77 @@
         <!-- Home Page -->
         <div id="home-page" class="page-content active">
             <section class="hero">
+                <!-- COMMENTAIRE: Vous pouvez changer le titre principal de la page d'accueil ici -->
                 <h1>Seek wisdom, not just knowledge or information.</h1>
+                
+                <!-- COMMENTAIRE: Vous pouvez modifier la description principale ici -->
                 <p>Wisdom is understanding the fundamental principles that govern reality. Knowledge is accumulation of facts. Information is data in context.</p>
                 
                 <div class="quote">
+                    <!-- COMMENTAIRE: Vous pouvez changer la citation ici -->
                     "The most important skill for meaningful living is becoming a perpetual learner. You have to know how to learn anything you need to learn."
                 </div>
             </section>
 
+            <!-- COMMENTAIRE TOUT EN HAUT POUR LA SECTION ARTICLES -->
+            <div class="comment to-fix">
+                <strong>SECTION À COMPLÉTER - ARTICLES</strong><br>
+                Tous les articles ont été supprimés comme demandé. Vous devez maintenant créer votre propre contenu.<br><br>
+                <strong>Pour ajouter des articles:</strong><br>
+                1. Copiez la structure HTML ci-dessous pour chaque nouvel article<br>
+                2. Remplissez le titre, la description, les métadonnées et les tags<br>
+                3. Répétez pour tous les articles que vous souhaitez ajouter<br><br>
+                
+                <strong>Structure d'un article:</strong><br>
+                <code>
+                    &lt;li class="essay-item"&gt;<br>
+                    &nbsp;&nbsp;&lt;h3 class="essay-title"&gt;&lt;a href="#" data-page="essays"&gt;[TITRE DE L'ARTICLE]&lt;/a&gt;&lt;/h3&gt;<br>
+                    &nbsp;&nbsp;&lt;p class="essay-excerpt"&gt;[DESCRIPTION COURTE]&lt;/p&gt;<br>
+                    &nbsp;&nbsp;&lt;div class="essay-meta"&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;[TEMPS DE LECTURE]&lt;/span&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;•&lt;/span&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;[DATE]&lt;/span&gt;<br>
+                    &nbsp;&nbsp;&lt;/div&gt;<br>
+                    &nbsp;&nbsp;&lt;div&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[TAG 1]&lt;/span&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[TAG 2]&lt;/span&gt;<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[TAG 3]&lt;/span&gt;<br>
+                    &nbsp;&nbsp;&lt;/div&gt;<br>
+                    &lt;/li&gt;
+                </code>
+            </div>
+
             <section class="content-section">
                 <h2 class="section-title">Latest Insights</h2>
                 <ul class="essay-list">
+                    <!-- COMMENTAIRE: Exemple d'article - Copiez cette structure pour vos articles -->
+                    <div class="comment">
+                        <strong>EXEMPLE D'ARTICLE</strong><br>
+                        Voici un exemple de structure d'article. Copiez-la et modifiez le contenu pour créer vos propres articles.
+                    </div>
+                    
+                    <!-- DÉBUT DE L'EXEMPLE D'ARTICLE - À MODIFIER -->
                     <li class="essay-item">
-                        <h3 class="essay-title"><a href="#" data-page="essays">How to Live Wisely (without following trends)</a></h3>
-                        <p class="essay-excerpt">A collection of thoughts and wisdom on building meaningful life and creating purpose.</p>
+                        <h3 class="essay-title"><a href="#" data-page="essays">[TITRE DE VOTRE ARTICLE]</a></h3>
+                        <p class="essay-excerpt">[DESCRIPTION COURTE DE VOTRE ARTICLE - environ 1-2 phrases]</p>
                         <div class="essay-meta">
-                            <span>6 min read</span>
+                            <span>[TEMPS DE LECTURE, ex: 5 min read]</span>
                             <span>•</span>
-                            <span>Updated Feb 2024</span>
+                            <span>[DATE, ex: Mar 2024]</span>
                         </div>
                         <div>
-                            <span class="tag">Wisdom</span>
-                            <span class="tag">Philosophy</span>
-                            <span class="tag">Life</span>
+                            <span class="tag">[TAG 1]</span>
+                            <span class="tag">[TAG 2]</span>
+                            <span class="tag">[TAG 3]</span>
                         </div>
                     </li>
-                    <li class="essay-item">
-                        <h3 class="essay-title"><a href="#" data-page="essays">The Modern Philosopher</a></h3>
-                        <p class="essay-excerpt">On understanding technology and seeking truth through timeless philosophy.</p>
-                        <div class="essay-meta">
-                            <span>9 min read</span>
-                            <span>•</span>
-                            <span>Jan 2024</span>
-                        </div>
-                        <div>
-                            <span class="tag">Technology</span>
-                            <span class="tag">Philosophy</span>
-                        </div>
-                    </li>
+                    <!-- FIN DE L'EXEMPLE D'ARTICLE -->
+                    
+                    <!-- COMMENTAIRE: Ajoutez vos articles ici en copiant la structure ci-dessus -->
+                    <div class="comment">
+                        <strong>ESPACE POUR AJOUTER VOS ARTICLES</strong><br>
+                        Copiez la structure de l'article ci-dessus et collez-la ici pour ajouter vos propres articles.
+                    </div>
                 </ul>
             </section>
         </div>
@@ -359,62 +433,15 @@
 
             <section class="content-section">
                 <h2 class="section-title">All Essays</h2>
+                <div class="comment to-fix">
+                    <strong>PAGE ESSAYS À COMPLÉTER</strong><br>
+                    Cette page affichera tous vos essais. Ajoutez vos articles ici en utilisant la même structure que sur la page d'accueil.
+                </div>
                 <ul class="essay-list">
-                    <li class="essay-item">
-                        <h3 class="essay-title"><a href="#">How to Live Wisely (without following trends)</a></h3>
-                        <p class="essay-excerpt">A comprehensive guide to building a meaningful life based on first principles rather than social validation.</p>
-                        <div class="essay-meta">
-                            <span>6 min read</span>
-                            <span>•</span>
-                            <span>Feb 2024</span>
-                        </div>
-                        <div>
-                            <span class="tag">Wisdom</span>
-                            <span class="tag">Philosophy</span>
-                            <span class="tag">Life</span>
-                        </div>
-                    </li>
-                    <li class="essay-item">
-                        <h3 class="essay-title"><a href="#">The Modern Philosopher</a></h3>
-                        <p class="essay-excerpt">Navigating the digital age with ancient wisdom and modern insights.</p>
-                        <div class="essay-meta">
-                            <span>9 min read</span>
-                            <span>•</span>
-                            <span>Jan 2024</span>
-                        </div>
-                        <div>
-                            <span class="tag">Technology</span>
-                            <span class="tag">Philosophy</span>
-                        </div>
-                    </li>
-                    <li class="essay-item">
-                        <h3 class="essay-title"><a href="#">Mindfulness in the Digital Age</a></h3>
-                        <p class="essay-excerpt">Finding peace and presence amidst constant digital stimulation.</p>
-                        <div class="essay-meta">
-                            <span>7 min read</span>
-                            <span>•</span>
-                            <span>Dec 2023</span>
-                        </div>
-                        <div>
-                            <span class="tag">Mindfulness</span>
-                            <span class="tag">Digital</span>
-                            <span class="tag">Well-being</span>
-                        </div>
-                    </li>
-                    <li class="essay-item">
-                        <h3 class="essay-title"><a href="#">The Ethics of Artificial Intelligence</a></h3>
-                        <p class="essay-excerpt">Philosophical considerations for the age of intelligent machines.</p>
-                        <div class="essay-meta">
-                            <span>11 min read</span>
-                            <span>•</span>
-                            <span>Nov 2023</span>
-                        </div>
-                        <div>
-                            <span class="tag">AI</span>
-                            <span class="tag">Ethics</span>
-                            <span class="tag">Future</span>
-                        </div>
-                    </li>
+                    <!-- COMMENTAIRE: Ajoutez vos essais ici -->
+                    <div class="comment">
+                        Ajoutez ici la liste complète de tous vos essais en utilisant la même structure que dans la section "Latest Insights".
+                    </div>
                 </ul>
             </section>
         </div>
@@ -428,63 +455,31 @@
 
             <section class="content-section">
                 <h2 class="section-title">Essential Reading</h2>
+                <div class="comment to-fix">
+                    <strong>PAGE BOOKS À COMPLÉTER</strong><br>
+                    Cette page affiche vos livres recommandés. Créez votre liste de livres préférés.
+                </div>
                 <ul class="book-list">
-                    <li class="book-item">
-                        <h3 class="book-title"><a href="#">The Wisdom of Dashlem</a></h3>
-                        <p class="book-author">Compiled by Various Authors</p>
-                        <p class="essay-excerpt">A collection of Dashlem's wisdom and philosophical insights from the last decade.</p>
-                        <div class="essay-meta">
-                            <span>Book</span>
-                            <span>•</span>
-                            <span>2023</span>
-                        </div>
-                        <div>
-                            <span class="tag">Philosophy</span>
-                            <span class="tag">Wisdom</span>
-                        </div>
-                    </li>
-                    <li class="book-item">
-                        <h3 class="book-title"><a href="#">Sapiens: A Brief History of Humankind</a></h3>
-                        <p class="book-author">Yuval Noah Harari</p>
-                        <p class="essay-excerpt">Exploring how biology and history have defined us and given us insight into what it means to be "human".</p>
-                        <div class="essay-meta">
-                            <span>Book</span>
-                            <span>•</span>
-                            <span>2014</span>
-                        </div>
-                        <div>
-                            <span class="tag">History</span>
-                            <span class="tag">Anthropology</span>
-                        </div>
-                    </li>
-                    <li class="book-item">
-                        <h3 class="book-title"><a href="#">Meditations</a></h3>
-                        <p class="book-author">Marcus Aurelius</p>
-                        <p class="essay-excerpt">The personal writings of the Roman emperor which outline his Stoic philosophy.</p>
-                        <div class="essay-meta">
-                            <span>Book</span>
-                            <span>•</span>
-                            <span>180 AD</span>
-                        </div>
-                        <div>
-                            <span class="tag">Stoicism</span>
-                            <span class="tag">Philosophy</span>
-                        </div>
-                    </li>
-                    <li class="book-item">
-                        <h3 class="book-title"><a href="#">The Beginning of Infinity</a></h3>
-                        <p class="book-author">David Deutsch</p>
-                        <p class="essay-excerpt">Explanations that transform the world and the infinite reach of human knowledge.</p>
-                        <div class="essay-meta">
-                            <span>Book</span>
-                            <span>•</span>
-                            <span>2011</span>
-                        </div>
-                        <div>
-                            <span class="tag">Science</span>
-                            <span class="tag">Epistemology</span>
-                        </div>
-                    </li>
+                    <!-- COMMENTAIRE: Structure pour un livre recommandé -->
+                    <div class="comment">
+                        <strong>STRUCTURE D'UN LIVRE RECOMMANDÉ:</strong><br>
+                        <code>
+                            &lt;li class="book-item"&gt;<br>
+                            &nbsp;&nbsp;&lt;h3 class="book-title"&gt;&lt;a href="#"&gt;[TITRE DU LIVRE]&lt;/a&gt;&lt;/h3&gt;<br>
+                            &nbsp;&nbsp;&lt;p class="book-author"&gt;[AUTEUR]&lt;/p&gt;<br>
+                            &nbsp;&nbsp;&lt;p class="essay-excerpt"&gt;[POURQUOI VOUS RECOMMANDEZ CE LIVRE]&lt;/p&gt;<br>
+                            &nbsp;&nbsp;&lt;div class="essay-meta"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;Book&lt;/span&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;•&lt;/span&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;[ANNÉE]&lt;/span&gt;<br>
+                            &nbsp;&nbsp;&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&lt;div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[CATÉGORIE 1]&lt;/span&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[CATÉGORIE 2]&lt;/span&gt;<br>
+                            &nbsp;&nbsp;&lt;/div&gt;<br>
+                            &lt;/li&gt;
+                        </code>
+                    </div>
                 </ul>
             </section>
         </div>
@@ -498,46 +493,30 @@
 
             <section class="content-section">
                 <h2 class="section-title">Latest Episodes</h2>
+                <div class="comment to-fix">
+                    <strong>PAGE PODCAST À COMPLÉTER</strong><br>
+                    Cette page affiche vos épisodes de podcast. Ajoutez vos épisodes ou vos podcasts préférés.
+                </div>
                 <ul class="podcast-list">
-                    <li class="podcast-item">
-                        <h3 class="podcast-title"><a href="#">The Nature of Consciousness</a></h3>
-                        <p class="podcast-description">Exploring what consciousness is and why it exists with neuroscientist Dr. Lena Moreau.</p>
-                        <div class="podcast-meta">
-                            <span>72 min</span>
-                            <span>•</span>
-                            <span>Jan 2024</span>
-                        </div>
-                        <div>
-                            <span class="tag">Consciousness</span>
-                            <span class="tag">Neuroscience</span>
-                        </div>
-                    </li>
-                    <li class="podcast-item">
-                        <h3 class="podcast-title"><a href="#">Stoicism for Modern Life</a></h3>
-                        <p class="podcast-description">Practical applications of Stoic philosophy in the 21st century.</p>
-                        <div class="podcast-meta">
-                            <span>58 min</span>
-                            <span>•</span>
-                            <span>Dec 2023</span>
-                        </div>
-                        <div>
-                            <span class="tag">Stoicism</span>
-                            <span class="tag">Philosophy</span>
-                        </div>
-                    </li>
-                    <li class="podcast-item">
-                        <h3 class="podcast-title"><a href="#">The Future of Education</a></h3>
-                        <p class="podcast-description">How technology is transforming how we learn and what it means for humanity.</p>
-                        <div class="podcast-meta">
-                            <span>65 min</span>
-                            <span>•</span>
-                            <span>Nov 2023</span>
-                        </div>
-                        <div>
-                            <span class="tag">Education</span>
-                            <span class="tag">Technology</span>
-                        </div>
-                    </li>
+                    <!-- COMMENTAIRE: Structure pour un épisode de podcast -->
+                    <div class="comment">
+                        <strong>STRUCTURE D'UN ÉPISODE DE PODCAST:</strong><br>
+                        <code>
+                            &lt;li class="podcast-item"&gt;<br>
+                            &nbsp;&nbsp;&lt;h3 class="podcast-title"&gt;&lt;a href="#"&gt;[TITRE DE L'ÉPISODE]&lt;/a&gt;&lt;/h3&gt;<br>
+                            &nbsp;&nbsp;&lt;p class="podcast-description"&gt;[DESCRIPTION]&lt;/p&gt;<br>
+                            &nbsp;&nbsp;&lt;div class="podcast-meta"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;[DURÉE]&lt;/span&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;•&lt;/span&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span&gt;[DATE]&lt;/span&gt;<br>
+                            &nbsp;&nbsp;&lt;/div&gt;<br>
+                            &nbsp;&nbsp;&lt;div&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[SUJET 1]&lt;/span&gt;<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;span class="tag"&gt;[SUJET 2]&lt;/span&gt;<br>
+                            &nbsp;&nbsp;&lt;/div&gt;<br>
+                            &lt;/li&gt;
+                        </code>
+                    </div>
                 </ul>
             </section>
         </div>
@@ -550,14 +529,19 @@
             </section>
 
             <section class="content-section">
+                <div class="comment to-fix">
+                    <strong>PAGE ABOUT À PERSONNALISER</strong><br>
+                    Cette page présente qui vous êtes. Rédigez votre propre description.
+                </div>
                 <div class="about-content">
-                    <p>Dashlem is a philosopher and thinker focused on understanding fundamental truths about reality, consciousness, and human flourishing. His work spans technology, philosophy, psychology, and the science of well-being.</p>
+                    <!-- COMMENTAIRE: Modifiez cette section pour parler de vous -->
+                    <p>[VOTRE DESCRIPTION - Qui êtes-vous? Quelles sont vos passions?]</p>
                     
-                    <p>Through essays, conversations, and writings, Dashlem explores timeless questions with modern relevance: How do we live meaningful lives? What is the nature of reality? How can we understand consciousness? What principles lead to wisdom and fulfillment?</p>
+                    <p>[VOTRE MISSION - Quel est le but de ce site? Que partagez-vous?]</p>
                     
-                    <p>The approach is interdisciplinary, drawing from ancient philosophical traditions, modern science, and first-principles thinking. The goal is not just to accumulate knowledge, but to cultivate wisdom that can be applied to live better lives and understand our world more deeply.</p>
+                    <p>[VOTRE APPROCHE - Quelle est votre méthodologie ou votre philosophie?]</p>
                     
-                    <p>This archive serves as a collection of insights, essays, and recommended resources for those on a similar path of understanding and growth.</p>
+                    <p>[APPEL À L'ACTION - Que souhaitez-vous que les visiteurs fassent?]</p>
                 </div>
             </section>
         </div>
@@ -570,54 +554,24 @@
             </section>
 
             <section class="content-section">
-                <h2 class="section-title">2024</h2>
+                <div class="comment to-fix">
+                    <strong>PAGE ARCHIVE À COMPLÉTER</strong><br>
+                    Cette page archive tous vos contenus par année. Organisez vos articles par date.
+                </div>
+                <h2 class="section-title">[ANNÉE, ex: 2024]</h2>
                 <ul class="essay-list">
-                    <li class="essay-item">
-                        <h3 class="essay-title"><a href="#">How to Live Wisely (without following trends)</a></h3>
-                        <div class="essay-meta">
-                            <span>Feb 2024</span>
-                            <span>•</span>
-                            <span>6 min read</span>
-                        </div>
-                    </li>
-                    <li class="essay-item">
-                        <h3 class="essay-title"><a href="#">The Modern Philosopher</a></h3>
-                        <div class="essay-meta">
-                            <span>Jan 2024</span>
-                            <span>•</span>
-                            <span>9 min read</span>
-                        </div>
-                    </li>
-                </ul>
-
-                <h2 class="section-title" style="margin-top: 3rem;">2023</h2>
-                <ul class="essay-list">
-                    <li class="essay-item">
-                        <h3 class="essay-title"><a href="#">Mindfulness in the Digital Age</a></h3>
-                        <div class="essay-meta">
-                            <span>Dec 2023</span>
-                            <span>•</span>
-                            <span>7 min read</span>
-                        </div>
-                    </li>
-                    <li class="essay-item">
-                        <h3 class="essay-title"><a href="#">The Ethics of Artificial Intelligence</a></h3>
-                        <div class="essay-meta">
-                            <span>Nov 2023</span>
-                            <span>•</span>
-                            <span>11 min read</span>
-                        </div>
-                    </li>
-                    <li class="essay-item">
-                        <h3 class="essay-title"><a href="#">First Principles Thinking</a></h3>
-                        <div class="essay-meta">
-                            <span>Oct 2023</span>
-                            <span>•</span>
-                            <span>8 min read</span>
-                        </div>
-                    </li>
+                    <!-- COMMENTAIRE: Ajoutez vos articles archivés ici -->
+                    <div class="comment">
+                        Ajoutez ici vos articles organisés par année. Utilisez la même structure simplifiée d'article.
+                    </div>
                 </ul>
             </section>
+        </div>
+
+        <!-- COMMENTAIRE POUR LA NEWSLETTER -->
+        <div class="comment">
+            <strong>NEWSLETTER</strong><br>
+            Vous pouvez modifier le texte de la newsletter ci-dessous. Pour intégrer un service de newsletter réel, vous devrez utiliser un service comme Mailchimp, ConvertKit, etc. et mettre à jour l'action du formulaire.
         </div>
 
         <section class="newsletter">
@@ -630,8 +584,10 @@
         </section>
 
         <footer>
+            <!-- COMMENTAIRE: Modifiez le copyright ici -->
             <p>© Dashlem 2024. All wisdom is free to share.</p>
             <div class="footer-links">
+                <!-- COMMENTAIRE: Ajoutez vos liens sociaux réels ici -->
                 <a href="https://twitter.com/dashlem" target="_blank">Twitter</a>
                 <a href="https://github.com" target="_blank">GitHub</a>
                 <a href="#">RSS</a>
@@ -727,6 +683,13 @@
                 }
             });
         });
+        
+        // COMMENTAIRE DANS LA CONSOLE POUR GUIDER L'UTILISATEUR
+        console.log("💡 GUIDE DE CRÉATION DE CONTENU:");
+        console.log("1. Tous les articles ont été supprimés comme demandé");
+        console.log("2. Des commentaires visibles ont été ajoutés pour vous guider");
+        console.log("3. Suivez les instructions dans les boîtes de commentaires rouges et jaunes");
+        console.log("4. Copiez les structures d'articles fournies pour créer votre contenu");
     </script>
 </body>
 </html>
