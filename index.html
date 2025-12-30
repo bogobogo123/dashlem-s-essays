@@ -3,386 +3,360 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashlem | Thoughts Archive</title>
-    <meta name="description" content="Personal archive of reflections, essays and thoughts about life, philosophy and learning.">
-    <meta name="author" content="Dashlem">
+    <title>dashlem - Essays on design, technology, and meaning</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-            max-width: 800px; 
-            margin: 0 auto; 
-            padding: 2rem 1rem;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fafafa;
-        }
-        
-        /* En-tête */
-        header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #eee;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-        
-        .subtitle {
-            color: #7f8c8d;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-        
-        /* Navigation */
-        nav {
-            margin: 2rem 0;
-        }
-        
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-        
-        .nav-links a {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            position: relative;
-        }
-        
-        .nav-links a:hover {
-            color: #2980b9;
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #3498db;
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        /* Structure des articles */
-        .articles-container {
-            margin: 3rem 0;
-        }
-        
-        .article { 
-            background: white;
-            margin-bottom: 2rem; 
-            padding: 2rem; 
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            border-left: 4px solid #3498db;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .article:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-        
-        .article h2 { 
-            font-size: 1.5rem; 
-            margin-bottom: 1rem; 
-            color: #2c3e50;
-        }
-        
-        .article p { 
-            color: #555; 
-            margin-bottom: 1rem; 
-        }
-        
-        .meta { 
-            color: #95a5a6; 
-            font-size: 0.9rem; 
-            margin-bottom: 1rem;
-        }
-        
-        .tags { 
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid #eee;
-        }
-        
-        .tags span { 
-            background: #ecf0f1; 
-            padding: 0.3rem 0.8rem; 
-            border-radius: 20px; 
-            font-size: 0.85rem; 
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-            display: inline-block;
-            color: #34495e;
-        }
-        
-        /* Espace pour vos articles */
-        .add-articles-here {
-            background: #e8f4fc;
-            border: 3px dashed #3498db;
-            padding: 3rem 2rem;
-            margin: 3rem 0;
-            text-align: center;
-            border-radius: 10px;
-        }
-        
-        .add-articles-here h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .add-articles-here p {
-            color: #7f8c8d;
-            margin-bottom: 1.5rem;
-        }
-        
-        .code-template {
-            background: white;
-            border: 1px solid #bdc3c7;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            text-align: left;
-            font-family: 'Courier New', monospace;
-            white-space: pre-wrap;
-            overflow-x: auto;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            color: #2c3e50;
-        }
-        
-        /* Newsletter - COULEUR SIMPLE SANS DÉGRADÉ */
-        .newsletter {
-            background: #3498db;
-            color: white;
-            padding: 3rem 2rem;
-            margin: 4rem 0;
-            border-radius: 15px;
-            text-align: center;
-        }
-        
-        .newsletter h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        .newsletter p {
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .newsletter-form {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-        
-        .newsletter-input {
-            width: 100%;
-            padding: 1rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1rem;
-            margin-bottom: 1rem;
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
-        
-        .newsletter-button {
-            background: white;
-            color: #3498db;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f5f5f0;
+            color: #2d2d2d;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 4rem;
+            background-color: #f5f5f0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: #2d2d2d;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2d2d2d;
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 900px;
+            margin: 6rem auto 4rem;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: normal;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+        }
+
+        /* Articles Section */
+        .articles-section {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 3rem;
+        }
+
+        /* Article Card */
+        .article {
+            margin-bottom: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .article:last-child {
+            border-bottom: none;
+        }
+
+        .article-meta {
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .article h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        .article p {
+            color: #555;
+            margin-bottom: 1rem;
             font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            width: 100%;
         }
-        
-        .newsletter-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+
+        .read-more {
+            color: #2d2d2d;
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #2d2d2d;
+            padding-bottom: 2px;
         }
-        
-        /* Pied de page */
-        footer {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid #eee;
-            color: #7f8c8d;
+
+        .read-more:hover {
+            opacity: 0.7;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background-color: #fff;
+            padding: 4rem 2rem;
+            margin-top: 6rem;
+        }
+
+        .newsletter-content {
+            max-width: 700px;
+            margin: 0 auto;
             text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        .newsletter p {
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.9rem 1.2rem;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .newsletter-form button {
+            padding: 0.9rem 2rem;
+            background-color: #2d2d2d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #444;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #fff;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #666;
             font-size: 0.9rem;
         }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: #3498db;
+
+        .social-link {
+            color: #666;
             text-decoration: none;
         }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
+
+        .social-link:hover {
+            color: #2d2d2d;
         }
-        
-        .copyright {
-            margin-top: 1.5rem;
-        }
-        
-        /* Responsive */
+
         @media (max-width: 768px) {
-            body { padding: 1rem; }
-            h1 { font-size: 2rem; }
-            .nav-links { gap: 1rem; }
-            .article { padding: 1.5rem; }
-            .newsletter { padding: 2rem 1rem; }
+            nav {
+                padding: 1.5rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    
-    <!-- En-tête du site -->
-    <header>
-        <h1>Dashlem</h1>
-        <p class="subtitle">Archives of my essays and personal thoughts</p>
-        
-        <!-- Navigation -->
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#accueil">Home</a></li>
-                <li><a href="#articles">Articles</a></li>
-                <li><a href="#newsletter">Newsletter</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#a-propos">About</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">dashlem</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#articles">Articles</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <!-- Section des articles existants -->
-    <section id="articles" class="articles-container">
-        <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">My Latest Reflections</h2>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Essays on design, technology, and the pursuit of meaning.</h1>
+        <p>I'm dashlem, and I write about the ideas that shape my thinking. These are my attempts to make sense of the world.</p>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="articles-section" id="articles">
+        <h3 class="section-title">Latest Essays</h3>
+
+        <!-- 
+        ═══════════════════════════════════════════════════════════════
+        COMMENT AJOUTER UN ARTICLE :
+        ═══════════════════════════════════════════════════════════════
         
-        <!-- EXEMPLE D'ARTICLE 1 -->
-        <div class="article">
-            <h2>First article available on 1st January 2026.</h2>
-            <p>What is real authenticy in a world where everything and everyone are similar. This is what you're going to discover on the first day of 2026. </p>
-            <div class="meta">Available on 1st January 2026 | 8 min of reading</div>
-            <div class="tags">
-                <span>Learning</span>
-                <span>Philosophy</span>
-                <span>Succes</span>
-                <span>Self improvement</span>
-            </div>
+        Copiez le bloc <article> ci-dessous et modifiez :
+        - La date et le temps de lecture dans <div class="article-meta">
+        - Le titre dans <h2>
+        - La description dans <p>
+        - Le lien dans <a href="">
+        
+        Exemple :
+        <article class="article">
+            <div class="article-meta">JANVIER 2025 · 5 MIN READ</div>
+            <h2>Votre Nouveau Titre</h2>
+            <p>Votre description ici...</p>
+            <a href="#" class="read-more">Read more</a>
+        </article>
+        
+        ═══════════════════════════════════════════════════════════════
+        COMMENT SUPPRIMER UN ARTICLE :
+        ═══════════════════════════════════════════════════════════════
+        
+        Supprimez simplement tout le bloc <article>...</article>
+        
+        ═══════════════════════════════════════════════════════════════
+        -->
+
+        <!-- ARTICLE 1 -->
+        <article class="article">
+            <div class="article-meta">DECEMBER 2024 · 3 MIN READ</div>
+            <h2>On Simplicity</h2>
+            <p>The art of reduction is the art of addition. When we remove the unnecessary, what remains speaks with greater clarity. This is the foundation of meaningful work.</p>
+            <a href="#" class="read-more">Read more</a>
+        </article>
+
+        <!-- ARTICLE 2 -->
+        <article class="article">
+            <div class="article-meta">NOVEMBER 2024 · 4 MIN READ</div>
+            <h2>The Long Game</h2>
+            <p>Most people overestimate what they can do in a day and underestimate what they can achieve in a decade. The compound effect of consistent effort is the single most powerful force in personal growth.</p>
+            <a href="#" class="read-more">Read more</a>
+        </article>
+
+        <!-- ARTICLE 3 -->
+        <article class="article">
+            <div class="article-meta">OCTOBER 2024 · 6 MIN READ</div>
+            <h2>Digital Minimalism</h2>
+            <p>In a world of infinite content and constant notifications, the ability to disconnect becomes a superpower. How we choose to spend our attention defines the quality of our lives.</p>
+            <a href="#" class="read-more">Read more</a>
+        </article>
+
+        <!-- ARTICLE 4 -->
+        <article class="article">
+            <div class="article-meta">SEPTEMBER 2024 · 5 MIN READ</div>
+            <h2>The Creative Process</h2>
+            <p>Creativity isn't about inspiration striking like lightning. It's about showing up every day, doing the work, and trusting that something meaningful will emerge from the practice.</p>
+            <a href="#" class="read-more">Read more</a>
+        </article>
+
+        <!-- ARTICLE 5 -->
+        <article class="article">
+            <div class="article-meta">AUGUST 2024 · 7 MIN READ</div>
+            <h2>Building in Public</h2>
+            <p>There's something transformative about sharing your work before it's perfect. The feedback, the accountability, and the connections you make along the way become part of the creative process itself.</p>
+            <a href="#" class="read-more">Read more</a>
+        </article>
+
+        <!-- 
+        Pour ajouter plus d'articles, copiez un des blocs ci-dessus
+        et collez-le ici, puis modifiez le contenu.
+        -->
+
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter">
+        <div class="newsletter-content">
+            <h2>Subscribe to my newsletter</h2>
+            <p>I share my thoughts on design, technology, and life. No spam, unsubscribe anytime.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="your@email.com" required>
+                <button type="submit">Subscribe</button>
+            </form>
         </div>
     </section>
 
-    <!-- ============================================= -->
-    <!-- ZONE EXPLICITE POUR AJOUTER VOS ARTICLES -->
-    <!-- ============================================= -->
-
-    <!-- Section Newsletter -->
-    <section id="newsletter" class="newsletter">
-        <h2>Stay Informed</h2>
-        <p>Receive more of my personal insights by subscribing here.</p>
-        
-        <form class="newsletter-form">
-            <input 
-                type="email" 
-                class="newsletter-input" 
-                placeholder="Your email address" 
-                required
-                aria-label="Email address for newsletter"
-            >
-            <button type="submit" class="newsletter-button">Join me</button>
-        </form>
-        
-        <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.8;">
-            By signing up you agree to receive occasional emails. Unsubscribe at any time.
-        </p>
-    </section>
-
-    <!-- Pied de page -->
+    <!-- Footer -->
     <footer>
-        <div id="contact">
-            <h3 style="color: #2c3e50; margin-bottom: 1rem;">Contact</h3>
-            <p>For any question or collaboration:</p>
-            <p style="margin: 0.5rem 0;">
-                📧 <a href="mailto:contact@dashlem.com" style="color: #3498db;">contact will be available soon</a>
-            </p>
-        </div>
-        
-        <div class="footer-links">
-            <a href="#mentions-legales">Legal notices</a>
-            <a href="#confidentialite">Privacy Policy</a>
-            <a href="#cookies">Cookie Management</a>
-            <a href="#archives">Full Archives</a>
-            <a href="#flux-rss">RSS Feed</a>
-        </div>
-        
-        <div id="a-propos" style="margin: 2rem 0; max-width: 600px; margin-left: auto; margin-right: auto;">
-            <h3 style="color: #2c3e50; margin-bottom: 1rem;">About this site</h3>
-            <p>This site is my personal reflections on essays and various thoughts about topics I'm interested in: philosophy, technology, politics, learning and self-improvement.</p>
-        </div>
-        
-        <div class="copyright">
-            <p>© 2025 Dashlem. All rights reserved.</p>
-            <p style="font-size: 0.8rem; margin-top: 0.5rem;">This site has been created with reflection and care.</p>
-        </div>
+        <div>© 2025 dashlem. All rights reserved.</div>
+        <a href="#" class="social-link">@dashlem</a>
     </footer>
 
     <script>
-        // Gestion de la newsletter
+        // Gestion du formulaire newsletter
         document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const email = this.querySelector('.newsletter-input').value;
-            
-            // Validation simple de l'email
-            if (email && email.includes('@')) {
-                alert(`Thank you for subscribing! A confirmation email has been sent to ${email}`);
-                this.reset();
-            } else {
-                alert('Please enter a valid email address.');
-            }
+            const email = this.querySelector('input').value;
+            alert('Merci pour votre inscription ! Email : ' + email);
+            this.reset();
         });
 
-        // Navigation fluide
+        // Smooth scroll pour les liens de navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId !== '#') {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
